@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (hover:hover) and (pointer:fine){body,a,button{cursor:none}}
+body {
+  background-color: #050505;
+  color: #d4d4d8;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+:focus-visible{outline:2px solid #7c9cff;outline-offset:3px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.grid-bg{background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 70% 60% at 50% 35%,#000,transparent)}
+.btn{@apply inline-flex items-center gap-2 rounded-md px-4 py-2.5 text-sm font-medium transition-colors}
+.btn-p{@apply bg-zinc-50 text-zinc-900 hover:bg-white}
+.btn-s{@apply border border-zinc-800 text-zinc-200 hover:border-white/25 hover:bg-white/5;}
