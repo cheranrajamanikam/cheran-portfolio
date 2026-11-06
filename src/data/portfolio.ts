@@ -6,7 +6,7 @@ export const personal = {
   intro: "I'm an Artificial Intelligence and Machine Learning engineering student based in Bengaluru, building AI-powered applications, full-stack systems and research-driven solutions.",
   status: 'AVAILABLE FOR INTERNSHIPS · 2026', location: 'Bengaluru, India',
   email: 'cheranrajamanikam03@gmail.com', phone: '+91 7619231249',
-  github: GH, linkedin: 'https://www.linkedin.com/in/cheran-rajamanikam/',
+  github: GH, linkedin: 'https://www.linkedin.com/in/cheran-rajamanikam-7977a2268/',
   resume: '/Cheran_Rajamanikam_Resume.pdf',
   statement: 'AI/ML engineer building at the intersection of software, research and intelligent systems.',
   about: ['I am an Artificial Intelligence and Machine Learning engineering student focused on building practical AI systems and understanding the engineering behind them.'],
