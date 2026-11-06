@@ -6,10 +6,16 @@ import { ProjectCard, ProjectModal, ResearchCard, ExperienceCard } from '../comp
 import { personal, projects, research, experience, skills, learning, certifications, education, earlier, type Project } from '../data/portfolio'
 const ext = { target: '_blank', rel: 'noreferrer' }
 
-export const About = () => (<Section id="about"><div className="grid gap-10 md:grid-cols-5">
-  <Reveal className="md:col-span-3"><h2 className="text-3xl font-semibold leading-tight tracking-tight text-zinc-50 sm:text-5xl">{personal.statement}</h2></Reveal>
-  <Reveal delay={.08} className="md:col-span-2"><p className="text-zinc-400">{personal.about[0]}</p>
-    <h3 className="mt-8 text-sm font-medium text-zinc-100">Interests</h3><ul className="mt-3 flex flex-wrap gap-2">{personal.focus.map(f => <li key={f}><SkillBadge>{f}</SkillBadge></li>)}</ul></Reveal></div></Section>)
+export const About = () => (<Section id="about"><div className="grid items-center gap-10 md:grid-cols-5">
+  <Reveal className="md:col-span-2"><div className="relative mx-auto max-w-sm overflow-hidden rounded-2xl border border-line bg-card p-2 shadow-2xl shadow-accent/10"><img src="/photos/cheran-profile.jpeg" alt="Cheran Rajamanikam" className="aspect-[4/5] w-full rounded-xl object-cover object-center" /><div className="pointer-events-none absolute inset-x-2 bottom-2 rounded-b-xl bg-gradient-to-t from-black/80 to-transparent p-5 pt-16"><p className="font-medium text-white">Cheran Rajamanikam</p><p className="mt-1 text-xs text-zinc-300">AI/ML · Research · Engineering</p></div></div></Reveal>
+  <div className="md:col-span-3"><Reveal><h2 className="text-3xl font-semibold leading-tight tracking-tight text-zinc-50 sm:text-5xl">{personal.statement}</h2></Reveal>
+  <Reveal delay={.08}><p className="mt-6 text-zinc-400">{personal.about[0]}</p>
+    <h3 className="mt-8 text-sm font-medium text-zinc-100">Interests</h3><ul className="mt-3 flex flex-wrap gap-2">{personal.focus.map(f => <li key={f}><SkillBadge>{f}</SkillBadge></li>)}</ul></Reveal></div></div></Section>)
+
+export const Gallery = () => (<Section id="gallery"><SectionHeading title="Beyond the screen" sub="A few moments from research presentations, technical work and events." />
+  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    {[{src:'/photos/research-presentation.jpeg',title:'Research presentation',caption:'Presenting research and technical work'},{src:'/photos/technical-presentation.jpeg',title:'Project walkthrough',caption:'Explaining ideas through data and visuals'},{src:'/photos/google-event.jpeg',title:'Tech community',caption:'Exploring the technology ecosystem'}].map((photo) => <Reveal key={photo.src}><figure className="group overflow-hidden rounded-xl border border-line bg-card"><img src={photo.src} alt={photo.title} loading="lazy" className="h-72 w-full object-cover transition duration-500 group-hover:scale-[1.03]" /><figcaption className="p-4"><p className="font-medium text-zinc-100">{photo.title}</p><p className="mt-1 text-sm text-zinc-500">{photo.caption}</p></figcaption></figure></Reveal>)}
+  </div></Section>)
 
 export function Projects() {
   const [open, setOpen] = useState<Project | null>(null)
@@ -62,7 +68,7 @@ export function Contact() {
       <li><a className="flex items-center gap-2 text-zinc-200 hover:text-accent" href={`tel:${personal.phone.replace(/\s/g, '')}`}><Phone size={16} />{personal.phone}</a></li></ul>
     <div className="mt-8 flex flex-wrap gap-3"><Magnetic><a href={`mailto:${personal.email}`} className="btn btn-p"><Mail size={16} />Email Me</a></Magnetic>
       <a href={personal.github} {...ext} className="btn btn-s"><Github size={16} />GitHub</a><a href={personal.linkedin} {...ext} className="btn btn-s"><Linkedin size={16} />LinkedIn</a>
-      <a href={personal.resume} {...ext} className="btn btn-s"><FileText size={16} />View Resume</a><a href={personal.resume} download className="btn btn-s"><Download size={16} />Download Resume</a></div></Reveal>
+      <a href={personal.resume} target="_blank" rel="noreferrer" className="btn btn-s"><FileText size={16} />View Resume</a><a href={personal.resume} download="Cheran_Rajamanikam_Resume.pdf" className="btn btn-s"><Download size={16} />Download Resume</a></div></Reveal>
     <Reveal delay={.08}><form onSubmit={send} className="space-y-3 rounded-lg border border-line bg-card p-6">
       <label className="block text-sm text-zinc-400">Name<input required name="name" className={field + ' mt-1'} autoComplete="name" /></label>
       <label className="block text-sm text-zinc-400">Email<input required type="email" name="email" className={field + ' mt-1'} autoComplete="email" /></label>
@@ -72,5 +78,5 @@ export function Contact() {
 
 export const Footer = () => (<footer className="border-t border-line"><div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 text-sm text-zinc-500 sm:flex-row sm:justify-between sm:px-8">
   <div><p className="font-semibold text-zinc-200">CHERAN.</p><p>{personal.roles}</p><p>{personal.location}</p></div>
-  <div className="flex flex-col gap-2 sm:items-end"><div className="flex flex-wrap gap-4"><a className="hover:text-zinc-200" href={`mailto:${personal.email}`}>Email</a><a className="hover:text-zinc-200" href={personal.github}>GitHub</a><a className="hover:text-zinc-200" href={personal.linkedin}>LinkedIn</a><a className="hover:text-zinc-200" href={personal.resume}>Resume</a></div>
+  <div className="flex flex-col gap-2 sm:items-end"><div className="flex flex-wrap gap-4"><a className="hover:text-zinc-200" href={`mailto:${personal.email}`}>Email</a><a className="hover:text-zinc-200" href={personal.github}>GitHub</a><a className="hover:text-zinc-200" href={personal.linkedin}>LinkedIn</a><a className="hover:text-zinc-200" href={personal.resume} download="Cheran_Rajamanikam_Resume.pdf">Download CV</a></div>
     <p>Copyright © 2026 Cheran Rajamanikam</p></div></div></footer>)

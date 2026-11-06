@@ -3,16 +3,16 @@ const GH = 'https://github.com/cheranrajamanikam'
 export const personal = {
   name: 'Cheran Rajamanikam', roles: 'AI/ML Engineer · Full-Stack Developer · Researcher',
   tagline: 'Building intelligent systems that turn ideas into working software.',
-  intro: "I'm a 3rd-year Artificial Intelligence and Machine Learning engineering student based in Bengaluru, building AI-powered applications, full-stack systems and research-driven solutions.",
+  intro: "I'm an Artificial Intelligence and Machine Learning engineering student based in Bengaluru, building AI-powered applications, full-stack systems and research-driven solutions.",
   status: 'AVAILABLE FOR INTERNSHIPS · 2026', location: 'Bengaluru, India',
   email: 'cheranrajamanikam03@gmail.com', phone: '+91 7619231249',
   github: GH, linkedin: 'https://www.linkedin.com/in/cheran-rajamanikam/',
-  resume: '/resume.pdf', // replace public/resume.pdf
+  resume: '/Cheran_Rajamanikam_Resume.pdf',
   statement: 'AI/ML engineer building at the intersection of software, research and intelligent systems.',
-  about: ['I am a 3rd-year Artificial Intelligence and Machine Learning engineering student focused on building practical AI systems and understanding the engineering behind them.'],
+  about: ['I am an Artificial Intelligence and Machine Learning engineering student focused on building practical AI systems and understanding the engineering behind them.'],
   focus: ['Machine Learning','Generative AI','Computer Vision','LLM applications','Retrieval-Augmented Generation','Quantum Machine Learning','Full-Stack Development','AI Research'],
 }
-export const stats = [{ value: '3', label: 'Publications' }, { value: '8.1', label: 'CGPA' }, { value: '3rd Year', label: 'BE AI & ML' }, { value: 'IEEE', label: 'Research publication' }]
+export const stats = [{ value: '3', label: 'Publications' }, { value: '8.1', label: 'CGPA' }, { value: 'BE', label: 'AI & ML · 2024–2028' }, { value: 'IEEE', label: 'Research publication' }]
 const TBD = 'Add measured results here once available.'
 export interface Project { name: string; tagline: string; description: string; problem: string; solution: string; tech: string[]; features?: string[]; highlight?: string; architecture: string; implementation: string; results: string; future: string; github: string; demo?: string; featured?: boolean }
 export const projects: Project[] = [
@@ -55,4 +55,4 @@ export const education = { school: 'The Oxford College of Engineering', degree: 
 export const earlier = [
   { school: 'Christ University, Bengaluru', program: 'Pre-University Course (PUC) — Physics, Chemistry, Biology, Literature, Mathematics', years: '2022 – 2024', grade: '82%', activities: ['Student Welfare Office (SWO)','Discipline Committee','Class Cricket Team'] },
   { school: 'DBM and RJS High School', program: 'School', years: '2010 – 2022', grade: '93%', activities: ['CMCA social awareness club','Kindle read to lead program','Literature Club','Math Club','Student Council (core member)'] }]
-export const nav = ['About','Projects','Research','Experience','Skills','Education','Contact']
+export const nav = ['About','Gallery','Projects','Research','Experience','Skills','Now','Education','Contact']
