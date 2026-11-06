@@ -1,17 +1,8 @@
-# Cheran Rajamanikam — Portfolio
+# Cheran Portfolio — Full-bleed Interactive 3D Hero
 
-A responsive, dark-cinematic portfolio for an AI/ML engineering student, full-stack developer and researcher. The visual system uses a midnight navy canvas, restrained blue/violet/cyan accents, clear high-contrast typography, glass-like content surfaces and a Spline-powered animated 3D hero.
+This revision replaces the framed, right-column Spline card with a full-bleed 3D background composition. The Spline orbital sculpture fills the hero behind the foreground copy, continues its orbital animation, and responds to mouse/touch movement with a restrained perspective tilt and a subtle press response. The old hero card and focus label are removed.
 
-## Included
-- Hero with responsive Spline 3D scene and existing portrait card
-- High-contrast typography and consistent Geist / Geist Mono type system
-- Readable metrics band with dark glass treatment
-- Strong top-left CHERAN wordmark and responsive navigation
-- About, photo gallery, selected projects, research/publications, experience, skills, currently building, education and contact sections
-- Responsive mobile menu and reduced-motion support
-- Downloadable resume at `/Cheran_Rajamanikam_Resume.pdf`
-- Local photo assets under `/photos/`
-- GitHub and LinkedIn links
+The small unframed profile signature keeps the original small portrait (`public/photos/cheran-profile.jpeg`). The About section uses the new mirror portrait (`public/photos/cheran-about-mirror.jpg`). The LinkedIn URL is updated to the supplied profile.
 
 ## Run locally
 
@@ -20,17 +11,24 @@ npm install
 npm run dev
 ```
 
-## Production build
+Production build:
 
 ```bash
 npm run build
-npm run preview
 ```
 
-Deploy the project root to Vercel. The project uses Vite + React + TypeScript + Tailwind CSS.
+The build script invokes TypeScript and Vite through Node rather than their `.bin` shims, avoiding the executable permission issue previously observed on Vercel.
 
-## Spline hero integration
+## Push to the existing GitHub repository
 
-The home hero uses the Spline scene through the official Spline Viewer web component. The published scene URL is `https://prod.spline.design/jrSFLoNrlfJIVNdx/scene.splinecode`. The scene URL is configured in `src/components/SplineHero.tsx`; the 3D canvas is composed inside the hero card with the original profile portrait.
+Copy/merge the project files into the existing repository. Preserve the repository's `.git` folder. Then run:
 
-The viewer script is loaded once at runtime. No additional Spline npm dependency is required. To replace the scene later, update `SPLINE_SCENE_URL` in `src/components/SplineHero.tsx` with the new exported `.splinecode` URL.
+```bash
+git add .
+git commit -m "Replace framed Spline card with interactive full-bleed 3D hero"
+git push
+```
+
+## Spline scene
+
+The hero uses the Spline React code export URL in `src/components/SplineHero.tsx`. The already-published scene contains the continuously rotating orbital sculpture; the React wrapper adds responsive pointer parallax so the scene feels interactive without a card frame. The Spline editor document also has an additional internal pointer-response script, which can be published later from **Spline → Export → Code → React → Update** if you want that motion to run on individual 3D objects inside the scene as well.
